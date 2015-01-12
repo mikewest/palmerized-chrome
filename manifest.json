@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "Palmerized Chrome",
+  "description": "https://noncombatant.org/2014/03/11/privacy-and-security-settings-in-chrome/",
+  "version": "0.1",
+
+  "permissions": [
+    "contentSettings",
+    "privacy"
+  ],
+
+  "background": {
+    "persistent": false,
+    "scripts": [ "background.js" ]
+  }
+}
