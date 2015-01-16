@@ -20,18 +20,18 @@ turnOffSetting("services", "alternateErrorPagesEnabled");
 turnOffSetting("services", "safeBrowsingEnabled");
 turnOffSetting("services", "searchSuggestEnabled");
 turnOffSetting("services", "spellingServiceEnabled");
+// TODO: Something for DNT.
 
 // EXTRA STUFF palmer@ DIDN'T MENTION BECAUSE WE DON'T HAVE UI FOR IT
 turnOffSetting("websites", "hyperlinkAuditingEnabled");
 turnOffSetting("websites", "referrersEnabled");
 
-// TODO: Something for "Enable 'OK Google'
-// TODO: Something for "Automatically report details of possible security incidents to Google"
-// TODO: Something for DNT.
-// TODO: Something for "Show notifications when new printers are detected"
-// TODO: Something for "Continue running background apps"
-// TODO: Something for "Use hardware acceleration"
+// EXTRA STUFF palmer@ DIDN'T MENTION EVEN THOUGH WE HAVE UI FOR IT
+turnOffSetting("services", "hotwordSearchEnabled");
+turnOffSetting("services", "safeBrowsingExtendedReportingEnabled");
 
+if (chrome.privacy.websites.protectedContentEnabled)
+  turnOffSetting("websites", "protectedContentEnabled");
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -75,8 +75,9 @@ blockForHTTPAllowForHTTPS("javascript");
 setForAllURLs("plugins", "block");
 
 /*
- * Geolocation: https://crbug.com/447989
+ * Geolocation
  */
+setForAllURLs("location", "block");
 
 
 /*
