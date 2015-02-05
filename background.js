@@ -86,20 +86,30 @@ setForAllURLs("location", "block");
 setForAllURLs("notifications", "block");
 
 /*
- * Pointer Lock: TODO
+ * Fullscreen
  */
+setForAllURLs("fullscreen", "block");
 
 /*
- * Media: TODO
+ * Pointer Lock
  */
+setForAllURLs("mouselock", "block");
 
 /*
- * Unsandboxed Plugins: TODO
+ * Media
  */
+setForAllURLs("camera", "block");
+setForAllURLs("microphone", "block");
 
 /*
- * Automatic Downloads: TODO
+ * Unsandboxed Plugins
  */
+setForAllURLs("unsandboxedPlugins", "block");
+
+/*
+ * Automatic Downloads
+ */
+setForAllURLs("automaticDownloads", "block");
 
 /*
  * Autodetect Language
