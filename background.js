@@ -88,7 +88,7 @@ setForAllURLs("notifications", "block");
 /*
  * Fullscreen
  */
-setForAllURLs("fullscreen", "block");
+setForAllURLs("fullscreen", "ask"); // TODO: "block"?
 
 /*
  * Pointer Lock
