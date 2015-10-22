@@ -5,6 +5,10 @@
   "description": "https://noncombatant.org/2014/03/11/privacy-and-security-settings-in-chrome/",
   "version": "0.1",
 
+  "icons": {
+    "128": "palmer.png"
+  },
+
   "permissions": [
     "contentSettings",
     "privacy"
