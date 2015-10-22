@@ -17,21 +17,28 @@ function turnOffSetting(category, setting) {
 turnOffSetting("network", "networkPredictionEnabled");
 
 turnOffSetting("services", "alternateErrorPagesEnabled");
+turnOffSetting("services", "autofillEnabled");
+turnOffSetting("services", "passwordSavingEnabled");
 turnOffSetting("services", "safeBrowsingEnabled");
 turnOffSetting("services", "searchSuggestEnabled");
 turnOffSetting("services", "spellingServiceEnabled");
 // TODO: Something for DNT.
 
 // EXTRA STUFF palmer@ DIDN'T MENTION BECAUSE WE DON'T HAVE UI FOR IT
+turnOffSetting("network", "webRTCMultipleRoutesEnabled");
 turnOffSetting("websites", "hyperlinkAuditingEnabled");
 turnOffSetting("websites", "referrersEnabled");
+if (chrome.privacy.websites.protectedContentEnabled)
+  turnOffSetting("websites", "protectedContentEnabled");
+if (chrome.privacy.network.webRTCNonProxiedUdbEnabled)
+  turnOffSetting("network", "webRTCNonProxiedUdbEnabled");
 
 // EXTRA STUFF palmer@ DIDN'T MENTION EVEN THOUGH WE HAVE UI FOR IT
 turnOffSetting("services", "hotwordSearchEnabled");
 turnOffSetting("services", "safeBrowsingExtendedReportingEnabled");
+turnOffSetting("services", "translationServiceEnabled");
 
-if (chrome.privacy.websites.protectedContentEnabled)
-  turnOffSetting("websites", "protectedContentEnabled");
+
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -79,7 +86,6 @@ setForAllURLs("plugins", "block");
  */
 setForAllURLs("location", "block");
 
-
 /*
  * Notifications
  */
@@ -88,7 +94,7 @@ setForAllURLs("notifications", "block");
 /*
  * Fullscreen
  */
-setForAllURLs("fullscreen", "ask"); // TODO: "block"?
+setForAllURLs("fullscreen", "ask");
 
 /*
  * Pointer Lock
@@ -110,16 +116,3 @@ setForAllURLs("unsandboxedPlugins", "block");
  * Automatic Downloads
  */
 setForAllURLs("automaticDownloads", "block");
-
-/*
- * Autodetect Language
- */
-turnOffSetting("services", "translationServiceEnabled");
-
-/*
- * Ask Where To Download: TODO
- */
-
-/*
- * Certificate Revocation: TODO
- */
